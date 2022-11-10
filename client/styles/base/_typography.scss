@@ -1,0 +1,143 @@
+// font sizes
+$default-font-size: 1.8rem;
+$small-font-size: 1.6rem;
+$medium-font-size: 2.2rem;
+$large-font-size: 3.2rem;
+$xlarge-font-size: 4.5rem;
+$logo-font-size-lg: 6rem;
+$logo-font-size-sm: 3rem;
+$logo-font-size-mobile-lg: 5rem;
+$logo-font-size-mobile-sm: 2.5rem;
+
+// @font-face {
+//     font-family: 'Raleway';
+//     src: url('../fonts/Raleway-Regular.eot');
+//     src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Raleway-Regular.woff2') format('woff2'),
+//         url('../fonts/Raleway-Regular.woff') format('woff'),
+//         url('../fonts/Raleway-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Righteous';
+//     src: url('../fonts/Righteous-Regular.eot');
+//     src: url('../fonts/Righteous-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Righteous-Regular.woff2') format('woff2'),
+//         url('../fonts/Righteous-Regular.woff') format('woff'),
+//         url('../fonts/Righteous-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// font settings
+
+body {
+    font-family: "Raleway", sans-serif;
+    color: $color-black;
+    font-size: $default-font-size;
+}
+
+h1 {
+    color: $color-primary;
+    font-family: "Righteous", sans-serif;
+    font-size: $logo-font-size-lg;
+    text-align: center;
+    // text-transform: uppercase;
+    letter-spacing: 6.5px;
+    line-height: 5.5rem;
+}
+
+h2 {
+    color: $color-primary;
+    font-family: "Righteous", sans-serif;
+    font-size: $logo-font-size-sm;
+    letter-spacing: 7.5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: $large-font-size;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    // text-shadow: $text-shadow;
+    color: $color-black;
+}
+
+a {
+    color: $color-black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+i {
+    font-size: $xlarge-font-size;
+}
+
+input, textarea {
+    font-family: "Raleway", sans-serif;
+    font-size: $default-font-size;
+}
+
+.methods {
+
+    &__icons {
+
+        i {
+            font-size: $xlarge-font-size;
+        }
+    }
+}
+
+.service-text {
+    line-height: 3rem;
+}
+
+.work {
+
+    &--link {
+        font-size: $large-font-size;
+        text-decoration: none;
+
+        &:hover {
+            text-shadow: none;
+        }
+    }
+}
+
+@media (max-width: $mobile-break) {
+    body {
+        font-size: $small-font-size;
+    }
+
+    h1 {
+        font-size: $logo-font-size-mobile-lg;
+        transform: translateX(2rem);
+    }
+
+    h2 {
+        font-size: $logo-font-size-mobile-sm;
+        transform: translateX(2rem);
+        letter-spacing: 6.8px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .work {
+
+        &--link {
+            font-size: $medium-font-size;
+
+            & i {
+                font-size: $medium-font-size;
+            }
+        }
+    }
+}

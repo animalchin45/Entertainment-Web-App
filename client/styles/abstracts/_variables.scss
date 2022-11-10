@@ -1,0 +1,35 @@
+// colors
+$color-primary: #1b3f6e;
+$color-secondary: #D6CCA1;
+$color-gray-light: #d3d4d0;
+$color-gray-dark: #373932;
+$color-white: #f7f7f6;
+$color-black: #0D1409;
+
+// TEXT SHADOW
+$text-shadow: -2px -2px 0px rgba($color-black, .5);
+$text-shadow-hover: 1px 1px 1px rgba($color-primary, .5);
+
+// Section Sizing
+$section-columns: minmax(50rem, 1fr) 1px minmax(50rem, 1fr);
+$section-columns-squeeze: minmax(20rem, 50rem) 1px minmax(80rem, 2fr);
+$section-columns-title-box: 1fr 1px;
+
+// Margin
+$margin-small: 1rem;
+$margin-medium: 3rem;
+$margin-large: 5rem;
+
+// Padding
+$padding-small: 1rem;
+$padding-medium: 3rem;
+$padding-large: 5rem;
+$padding-xl: 7rem;
+
+// // Media Breaks
+// $screen-large: 1200px;
+$mobile-break: 1100px;
+
+// Animation Timing
+$fade-in-quick: .2s;
+$fade-in-slow: .4s;
