@@ -15,28 +15,14 @@ const images = importAll(
   require.context('./assets/thumbnails', true, /\.(png|jpe?g|svg)$/)
 )
 
-console.log(images)
+// console.log(images, data)
 
 const App = () => {
   const renderedStuff = data.map((title) => {
-    const imgPath = title.thumbnail.regular.small
+    const imgPath = title.thumbnail.regular.large
+    const imgSrc = images[imgPath.replace('./assets/thumbnails/', '')]
 
-    console.log(
-      imgPath.replace('./assets/thumbnails/', './client/assets/thumbnails/')
-    )
-
-    return (
-      <img
-        src={
-          images[
-            imgPath.replace(
-              './assets/thumbnails/',
-              '/dist/client/assets/thumbnails/'
-            )
-          ]
-        }
-      />
-    )
+    return <img src={imgSrc.default} key={title.title} />
   })
 
   return (

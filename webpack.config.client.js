@@ -1,6 +1,5 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-// const CopyPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 const CURRENT_WORKING_DIR = process.cwd()
 const config = {
@@ -58,9 +57,6 @@ const config = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    // new CopyPlugin({
-    //   patterns: [{ from: 'client/assets/thumbnails', to: '/' }],
-    // }),
   ],
   resolve: {
     alias: {
