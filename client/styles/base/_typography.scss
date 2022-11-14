@@ -1,143 +1,64 @@
 // font sizes
-$default-font-size: 1.8rem;
-$small-font-size: 1.6rem;
-$medium-font-size: 2.2rem;
-$large-font-size: 3.2rem;
-$xlarge-font-size: 4.5rem;
-$logo-font-size-lg: 6rem;
-$logo-font-size-sm: 3rem;
-$logo-font-size-mobile-lg: 5rem;
-$logo-font-size-mobile-sm: 2.5rem;
+$font-body-small: 1.3rem;
+$font-body-medium: 1.5rem;
+$font-heading-small: 1.8rem;
+$font-heading-medium: 2.4rem;
+$font-heading-large: 3.2rem;
 
-// @font-face {
-//     font-family: 'Raleway';
-//     src: url('../fonts/Raleway-Regular.eot');
-//     src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
-//         url('../fonts/Raleway-Regular.woff2') format('woff2'),
-//         url('../fonts/Raleway-Regular.woff') format('woff'),
-//         url('../fonts/Raleway-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+  font-family: 'Outfit';
+  src: url('../fonts/Outfit-Medium.eot');
+  src: url('../fonts/Outfit-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Outfit-Medium.woff2') format('woff2'),
+    url('../fonts/Outfit-Medium.woff') format('woff'),
+    url('../fonts/Outfit-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//     font-family: 'Righteous';
-//     src: url('../fonts/Righteous-Regular.eot');
-//     src: url('../fonts/Righteous-Regular.eot?#iefix') format('embedded-opentype'),
-//         url('../fonts/Righteous-Regular.woff2') format('woff2'),
-//         url('../fonts/Righteous-Regular.woff') format('woff'),
-//         url('../fonts/Righteous-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+  font-family: 'Outfit';
+  src: url('../fonts/Outfit-Light.eot');
+  src: url('../fonts/Outfit-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Outfit-Light.woff2') format('woff2'),
+    url('../fonts/Outfit-Light.woff') format('woff'),
+    url('../fonts/Outfit-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 // font settings
 
 body {
-    font-family: "Raleway", sans-serif;
-    color: $color-black;
-    font-size: $default-font-size;
+  color: $pure-white;
+  font-size: $font-body-medium;
+  font-weight: 300;
 }
 
 h1 {
-    color: $color-primary;
-    font-family: "Righteous", sans-serif;
-    font-size: $logo-font-size-lg;
-    text-align: center;
-    // text-transform: uppercase;
-    letter-spacing: 6.5px;
-    line-height: 5.5rem;
+  font-size: $font-heading-large;
 }
 
 h2 {
-    color: $color-primary;
-    font-family: "Righteous", sans-serif;
-    font-size: $logo-font-size-sm;
-    letter-spacing: 7.5px;
-    text-align: center;
-    text-transform: uppercase;
+  font-size: $font-heading-medium;
+}
+
+.heading-medium {
+  font-size: $font-heading-medium;
 }
 
 h3 {
-    font-family: "Raleway", sans-serif;
-    font-size: $large-font-size;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    // text-shadow: $text-shadow;
-    color: $color-black;
+  font-size: $font-heading-medium;
+  font-weight: 500;
 }
 
-a {
-    color: $color-black;
-    cursor: pointer;
-    text-decoration: underline;
+h4 {
+  font-size: $font-heading-small;
+  font-weight: 500;
 }
 
-i {
-    font-size: $xlarge-font-size;
-}
-
-input, textarea {
-    font-family: "Raleway", sans-serif;
-    font-size: $default-font-size;
-}
-
-.methods {
-
-    &__icons {
-
-        i {
-            font-size: $xlarge-font-size;
-        }
-    }
-}
-
-.service-text {
-    line-height: 3rem;
-}
-
-.work {
-
-    &--link {
-        font-size: $large-font-size;
-        text-decoration: none;
-
-        &:hover {
-            text-shadow: none;
-        }
-    }
-}
-
-@media (max-width: $mobile-break) {
-    body {
-        font-size: $small-font-size;
-    }
-
-    h1 {
-        font-size: $logo-font-size-mobile-lg;
-        transform: translateX(2rem);
-    }
-
-    h2 {
-        font-size: $logo-font-size-mobile-sm;
-        transform: translateX(2rem);
-        letter-spacing: 6.8px;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    .work {
-
-        &--link {
-            font-size: $medium-font-size;
-
-            & i {
-                font-size: $medium-font-size;
-            }
-        }
-    }
+.font-small {
+  font-size: $font-body-small;
 }

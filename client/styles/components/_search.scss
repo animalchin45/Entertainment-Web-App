@@ -1,0 +1,27 @@
+.search {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  height: 3.2rem;
+  margin: $space-large $space-small $space-large $space-small;
+  position: relative;
+  width: calc(100% - $space-small);
+
+  & button {
+    background-color: $dark-blue;
+    border: none;
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  & input {
+    background-color: $dark-blue;
+    border: none;
+    height: 100%;
+    margin-left: $space-large;
+    width: calc(100% - $space-large);
+
+    // &:focus {
+    //     border: none none
+    // }
+  }
+}

@@ -4,9 +4,12 @@ export default () => {
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Entertainment Web App</title>
-        <meta name="description" content="Millions of titles ready to be discovered">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./client/assets/favicon-32x32.png">
+
+        <title>Frontend Mentor | Entertainment web app</title>
     </head>
     <body>
         <div id="root"></div>

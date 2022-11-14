@@ -1,0 +1,22 @@
+main {
+  background-color: $dark-blue;
+  display: grid;
+  grid-template-columns: 14.6rem 1fr;
+  min-height: 100vh;
+}
+
+.layout {
+  margin: $space-large $space-small $space-small 0;
+
+  &__home {
+    display: grid;
+    // grid-template-rows: ;
+  }
+}
+
+@media (max-width: $tablet-break) {
+  main {
+    grid-template-columns: none;
+    grid-template-rows: 12.8rem 1fr;
+  }
+}
