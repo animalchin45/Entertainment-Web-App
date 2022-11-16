@@ -3,15 +3,16 @@ header {
   background-color: $semi-dark-blue;
   border: none;
   border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-  height: 96rem;
+  display: grid;
+  // height: 96rem;
+  grid-template-rows: 9.8rem 20rem 1fr 7.2rem;
+  justify-items: center;
   margin: $space-large $space-small $space-large $space-large;
-  padding: $space-large 0;
 
   & img {
     border: 1px solid $pure-white;
     border-radius: 20rem;
+    grid-row: 4 /5;
     width: 4rem;
   }
 }
@@ -20,7 +21,6 @@ nav {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 6rem 0 55.6rem 0;
 
   & a {
     margin-bottom: $space-large;
@@ -46,12 +46,14 @@ nav {
     align-items: center;
     display: grid;
     grid-template-columns: 8rem 1fr 8rem;
+    grid-template-rows: auto;
     height: 7.2rem;
     justify-items: center;
     margin: $space-medium $space-medium $space-large $space-medium;
     padding: 0;
 
     & img {
+      grid-row: auto;
       width: 3.2rem;
     }
   }
