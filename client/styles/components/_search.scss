@@ -2,13 +2,14 @@
   display: grid;
   grid-template-columns: 3.2rem 1fr;
   height: 3.2rem;
-  margin: $space-large $space-small $space-large $space-small;
+  margin: $space-large 0 $space-large 0;
   position: relative;
-  width: calc(100% - $space-small);
+  width: 100%;
 
   & button {
     background-color: $dark-blue;
     border: none;
+    cursor: pointer;
     height: 3.2rem;
     width: 3.2rem;
   }
@@ -16,12 +17,47 @@
   & input {
     background-color: $dark-blue;
     border: none;
+    border-bottom: 1px solid rgba($greyish-blue, 0);
     height: 100%;
     margin-left: $space-large;
+    outline: none;
+    padding-bottom: 1.4rem;
     width: calc(100% - $space-large);
 
-    // &:focus {
-    //     border: none none
-    // }
+    &:focus {
+      border-bottom: 1px solid rgba($greyish-blue, 1);
+    }
+  }
+}
+
+@media (max-width: $tablet-break) {
+  .search {
+    margin: 0;
+
+    & input {
+      border-bottom: none;
+      margin-left: $space-medium;
+
+      &:focus {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .search {
+    & button {
+      height: 2.4rem;
+      width: 2.4rem;
+
+      & svg {
+        transform: scale(0.76);
+      }
+    }
+
+    & input {
+      padding: 0;
+    }
   }
 }

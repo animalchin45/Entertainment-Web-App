@@ -4,8 +4,8 @@ header {
   border: none;
   border-radius: 2rem;
   display: grid;
-  // height: 96rem;
   grid-template-rows: 9.8rem 20rem 1fr 7.2rem;
+  height: 90vh;
   justify-items: center;
   margin: $space-large $space-small $space-large $space-large;
 

@@ -10,6 +10,7 @@ function Search() {
       </button>
       <input
         className='heading-medium'
+        type='text'
         placeholder='Search for movies or TV series'
       ></input>
     </form>

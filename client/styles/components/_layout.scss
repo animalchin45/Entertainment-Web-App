@@ -6,11 +6,11 @@ main {
 }
 
 .layout {
-  margin: $space-large $space-small $space-small 0;
+  margin: $space-large $space-medium $space-small $space-small;
 
   &__home {
     display: grid;
-    // grid-template-rows: ;
+    grid-template-rows: 9.6rem 33.5rem min-content;
   }
 }
 
@@ -18,5 +18,27 @@ main {
   main {
     grid-template-columns: none;
     grid-template-rows: 12.8rem 1fr;
+  }
+
+  .layout {
+    margin: 0 $space-medium 0 $space-medium;
+
+    &__home {
+      grid-template-rows: 6.5rem 33.5rem min-content;
+    }
+  }
+}
+
+@media (max-width: $mobile-break) {
+  main {
+    grid-template-rows: 8rem 1fr;
+  }
+
+  .layout {
+    margin: 0 $space-xsmall 0 $space-xsmall;
+
+    &__home {
+      grid-template-rows: 4.8rem 20.5rem min-content;
+    }
   }
 }

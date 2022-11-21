@@ -33,12 +33,14 @@ $font-heading-large: 3.2rem;
 
 body {
   color: $pure-white;
+  font-family: 'Outfit', sans-serif;
   font-size: $font-body-medium;
   font-weight: 300;
 }
 
 h1 {
   font-size: $font-heading-large;
+  font-weight: 300;
 }
 
 h2 {
@@ -61,4 +63,38 @@ h4 {
 
 .font-small {
   font-size: $font-body-small;
+}
+
+.search {
+  & input {
+    color: $pure-white;
+    font-size: $font-heading-medium;
+  }
+}
+
+.btn {
+  & p {
+    color: rgba($pure-white, 0.75);
+  }
+
+  & h3 {
+    color: $pure-white;
+    text-align: left;
+  }
+
+  & h4 {
+    color: $pure-white;
+  }
+}
+
+@media (max-width: $mobile-break) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .search {
+    & input {
+      font-size: 1.6rem;
+    }
+  }
 }
