@@ -3,6 +3,14 @@
   border: none;
   cursor: pointer;
 
+  &__search {
+    background-color: $dark-blue;
+    border: none;
+    cursor: pointer;
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
   &--play {
     &:hover > .btn--play__icon {
       opacity: 1;
@@ -78,10 +86,23 @@
   .btn {
     &--play {
       &__icon {
-        &--show {
-          left: 5.15rem;
-          top: 4.9rem;
-        }
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .btn {
+    &__bookmark {
+      &--trending {
+        right: $space-xxsmall;
+        top: $space-xxsmall;
+      }
+
+      &--show {
+        right: $space-xxsmall;
+        top: $space-xxsmall;
       }
     }
   }

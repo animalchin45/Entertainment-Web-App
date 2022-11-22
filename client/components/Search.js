@@ -5,7 +5,7 @@ import SearchButton from '../assets/icon-search.svg'
 function Search() {
   return (
     <form className='search'>
-      <button>
+      <button className='btn__search'>
         <SearchButton />
       </button>
       <input

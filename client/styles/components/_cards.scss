@@ -68,3 +68,32 @@
     }
   }
 }
+
+@media (max-width: $mobile-break) {
+  .card {
+    &--trending {
+      height: 14rem;
+      width: 24rem;
+
+      &__info {
+        bottom: $space-xsmall;
+        grid-template-rows: 1.9rem 1.9rem;
+        left: $space-xsmall;
+      }
+
+      & img {
+        height: 14rem;
+        width: 24rem;
+      }
+    }
+    &--show {
+      height: 15.4rem;
+      width: 16.4rem;
+
+      & img {
+        height: 11rem;
+        width: 16.4rem;
+      }
+    }
+  }
+}

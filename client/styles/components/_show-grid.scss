@@ -21,3 +21,15 @@
     }
   }
 }
+
+@media (max-width: $mobile-break) {
+  .show-grid {
+    grid-template-rows: 4.9rem min-content;
+
+    &__shows {
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, 16.4rem);
+    }
+  }
+}

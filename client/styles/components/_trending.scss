@@ -24,3 +24,14 @@
     margin: 0;
   }
 }
+
+@media (max-width: $mobile-break) {
+  .trending {
+    grid-template-rows: 4.1rem 14rem 1fr;
+
+    &__shows {
+      grid-column-gap: $space-xsmall;
+      grid-template-columns: repeat(auto-fit, 24rem);
+    }
+  }
+}
