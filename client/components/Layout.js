@@ -1,12 +1,16 @@
 import React from 'react'
 
 import Header from './Header'
+import Search from './Search'
 
 function Layout(props) {
   return (
     <main>
       <Header />
-      {props.children}
+      <div className='layout'>
+        <Search />
+        {props.children}
+      </div>
     </main>
   )
 }
