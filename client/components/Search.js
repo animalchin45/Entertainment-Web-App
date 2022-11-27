@@ -9,7 +9,7 @@ function Search() {
         <SearchButton />
       </button>
       <input
-        className='heading-medium'
+        className='input input__search heading-medium'
         type='text'
         placeholder='Search for movies or TV series'
       ></input>

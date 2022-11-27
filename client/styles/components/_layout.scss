@@ -9,6 +9,7 @@ main {
   display: grid;
   grid-template-rows: 9.6rem min-content;
   margin: $space-large $space-medium $space-small $space-small;
+  position: static;
 
   &__home {
     display: grid;

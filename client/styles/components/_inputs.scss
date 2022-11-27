@@ -1,0 +1,34 @@
+.input {
+  border: none;
+  border-bottom: 1px solid rgba($greyish-blue, 0);
+  outline: none;
+
+  &__search {
+    background-color: $dark-blue;
+    height: 100%;
+    margin-left: $space-large;
+    padding-bottom: 1.4rem;
+    width: calc(100% - $space-large);
+
+    &:focus {
+      border-bottom: 1px solid rgba($greyish-blue, 1);
+    }
+  }
+
+  &__account {
+    background-color: $semi-dark-blue;
+    border-bottom: 1px solid rgba($greyish-blue, 1);
+    height: 3.7rem;
+    margin-bottom: $space-medium;
+    padding: 0 0 $space-xsmall $space-xsmall;
+    width: 33.6rem;
+
+    &:focus {
+      border-bottom: 1px solid rgba($pure-white, 1);
+    }
+
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }
+  }
+}

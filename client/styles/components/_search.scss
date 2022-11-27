@@ -5,21 +5,6 @@
   margin: $space-large 0 $space-large 0;
   position: relative;
   width: 100%;
-
-  & input {
-    background-color: $dark-blue;
-    border: none;
-    border-bottom: 1px solid rgba($greyish-blue, 0);
-    height: 100%;
-    margin-left: $space-large;
-    outline: none;
-    padding-bottom: 1.4rem;
-    width: calc(100% - $space-large);
-
-    &:focus {
-      border-bottom: 1px solid rgba($greyish-blue, 1);
-    }
-  }
 }
 
 @media (max-width: $tablet-break) {

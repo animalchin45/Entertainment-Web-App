@@ -1,5 +1,4 @@
 .btn {
-  background-color: rgba($pure-white, 0);
   border: none;
   cursor: pointer;
 
@@ -12,6 +11,7 @@
   }
 
   &--play {
+    background-color: rgba($pure-white, 0);
     &:hover > .btn--play__icon {
       opacity: 1;
     }
@@ -79,6 +79,11 @@
     &:hover {
       background-color: $pure-white;
     }
+  }
+
+  &__account {
+    background-color: $red;
+    height: 4.8rem;
   }
 }
 
