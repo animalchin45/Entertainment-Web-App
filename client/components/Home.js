@@ -3,11 +3,11 @@ import React from 'react'
 import Trending from './Trending'
 import Recommended from './Recommended'
 
-function Home({ data }) {
+function Home() {
   return (
     <section className='layout__home'>
-      <Trending data={data} />
-      <Recommended data={data} />
+      <Trending />
+      <Recommended />
     </section>
   )
 }

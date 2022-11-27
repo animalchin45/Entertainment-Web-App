@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import BookmarkEmpty from '../assets/icon-bookmark-empty.svg'
 import BookmarkFull from '../assets/icon-bookmark-full.svg'
@@ -7,9 +8,9 @@ import Tv from '../assets/icon-category-tv.svg'
 import Play from '../assets/icon-play.svg'
 import { images } from '../hooks/imageImport'
 
-function TrendingCards({ data }) {
+function TrendingCards() {
+  const { data } = useSelector((state) => state.data)
   const trending = data.filter((show) => show.isTrending === true)
-  console.log(trending)
 
   const renderedCards = trending.map((title) => {
     const imgPath = title.thumbnail.trending.large

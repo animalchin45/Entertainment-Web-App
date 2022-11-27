@@ -1,7 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 import ShowCards from './ShowCards'
 
-function Recommended({ data }) {
+function Recommended() {
+  const { data } = useSelector((state) => state.data)
+
   return (
     <section className='show-grid'>
       <h1>Recommended for you</h1>
