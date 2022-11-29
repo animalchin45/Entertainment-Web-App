@@ -22,7 +22,7 @@ function Header() {
         <Link to='/tv'>
           <Tv />
         </Link>
-        <Link to='/bookmark'>
+        <Link to='/bookmarks'>
           <Bookmark />
         </Link>
       </nav>
