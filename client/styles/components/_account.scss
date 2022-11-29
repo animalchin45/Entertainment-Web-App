@@ -48,3 +48,23 @@
     }
   }
 }
+
+@media (max-width: $tablet-break) {
+  .account {
+    &__wrapper {
+      transform: translateX(-$space-large);
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .account {
+    width: 83%;
+
+    &__wrapper {
+      transform: translateX(-$space-xsmall);
+      // width: 100%;
+    }
+  }
+}

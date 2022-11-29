@@ -1,6 +1,7 @@
 .input {
   border: none;
   border-bottom: 1px solid rgba($greyish-blue, 0);
+  caret-color: $red;
   outline: none;
 
   &__search {
