@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { filterShows } from '../features/data/dataSlice'
 
 import ShowCards from './ShowCards'
 
-function FilterdShows({ filterType }) {
+function FilterdShows({ filterType, pageTitle }) {
+  const dispatch = useDispatch()
   const { data } = useSelector((state) => state.data)
-  const [filteredData, setFilteredData] = useState([])
 
   // Filter Results
   useEffect(() => {
-    if (filterType === 'Movies') {
-      setFilteredData(data.filter((type) => type.category === 'Movie'))
-    } else {
-      setFilteredData(data.filter((type) => type.category === 'TV Series'))
-    }
+    dispatch(filterShows(filterType))
   }, [filterType])
 
   return (
     <section className='show-grid'>
-      <h1>{filterType}</h1>
+      <h1>{pageTitle}</h1>
       <div className='show-grid__shows'>
-        <ShowCards data={filteredData} />
+        <ShowCards data={data} />
       </div>
     </section>
   )

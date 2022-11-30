@@ -4,6 +4,7 @@ import { hot } from 'react-hot-loader/root'
 
 import Layout from './components/Layout'
 import Home from './components/Home'
+import SearchResults from './components/SearchResults'
 import FilterdShows from './components/FilteredShows'
 import BookmarkedShows from './components/BookmarkedShows'
 import Login from './components/Login'
@@ -17,12 +18,19 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path='/' element={<Home />} />
-            {/* <Route path='/search' element={<SearchResults />} /> */}
+            <Route path='/search' element={<SearchResults />} />
             <Route
               path='/movies'
-              element={<FilterdShows filterType={'Movies'} />}
+              element={
+                <FilterdShows filterType={'Movie'} pageTitle={'Movies'} />
+              }
             />
-            <Route path='/tv' element={<FilterdShows filterType={'Tv'} />} />
+            <Route
+              path='/tv'
+              element={
+                <FilterdShows filterType={'TV Series'} pageTitle={'Tv'} />
+              }
+            />
             <Route path='/bookmarks' element={<BookmarkedShows />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
