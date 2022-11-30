@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { resetData } from '../features/data/dataSlice'
+import { reset } from '../features/data/dataSlice'
 
 import Trending from './Trending'
 import Recommended from './Recommended'
@@ -10,7 +10,7 @@ function Home() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(resetData())
+    dispatch(reset())
   }, [])
 
   return (

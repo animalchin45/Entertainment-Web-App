@@ -30,6 +30,7 @@ function Search() {
       <input
         className='input input__search heading-medium'
         type='text'
+        value={searchTerm}
         placeholder='Search for movies or TV series'
         onChange={onChange}
       ></input>

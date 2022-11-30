@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import data from './data.json'
+import library from './data.json'
 
 const initialState = {
-  data,
+  data: library,
   searchTerm: '',
 }
 
@@ -11,26 +11,14 @@ export const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
-    resetData: (state) => initialState,
-    filterShows: (state, action) => {
-      return {
-        ...state,
-        data: data.filter((item) => item.category === action.payload),
-      }
-    },
-    bookmarkShows: (state) => {
-      return {
-        ...state,
-        data: data.filter((item) => item.isBookmarked),
-      }
-    },
+    reset: (state) => initialState,
     setTerm: (state, action) => {
       state.searchTerm = action.payload
     },
     searchShows: (state, action) => {
       return {
         ...state,
-        data: data.filter((item) =>
+        data: library.filter((item) =>
           item.title.toLowerCase().includes(action.payload.toLowerCase())
         ),
       }
@@ -38,6 +26,5 @@ export const dataSlice = createSlice({
   },
 })
 
-export const { resetData, filterShows, bookmarkShows, setTerm, searchShows } =
-  dataSlice.actions
+export const { reset, setTerm, searchShows } = dataSlice.actions
 export default dataSlice.reducer
