@@ -2,13 +2,15 @@ import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 
 // Import Reducers
-// auth reducer
-// bookmark reducer
+import authReducer from './features/auth/authSlice'
 import dataReducer from './features/data/dataSlice'
+import bookmarkReducer from './features/bookmark/bookmarkSlice'
 
 // Combine Reducers
 const reducers = combineReducers({
   data: dataReducer,
+  auth: authReducer,
+  bookmark: bookmarkReducer,
 })
 
 // Configure Store

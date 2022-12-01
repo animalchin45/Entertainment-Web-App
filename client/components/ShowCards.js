@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import BookmarkEmpty from '../assets/icon-bookmark-empty.svg'
 import BookmarkFull from '../assets/icon-bookmark-full.svg'
@@ -8,15 +9,19 @@ import Play from '../assets/icon-play.svg'
 import { images } from '../hooks/imageImport'
 
 function ShowCards({ data }) {
+  const { user } = useSelector((state) => state.auth)
+
   const renderedCards = data.map((title) => {
     const imgPath = title.thumbnail.regular.small
     const imgSrc = images[imgPath.replace('./assets/', '')]
 
     return (
       <div className='card card--show' key={title.title}>
-        <button className='btn__bookmark btn__bookmark--show'>
-          {title.isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
-        </button>
+        {user && (
+          <button className='btn__bookmark btn__bookmark--show'>
+            {title.isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
+          </button>
+        )}
         <button className='btn btn--play'>
           <div className='btn--play__icon btn--play__icon--show'>
             <Play />

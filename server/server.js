@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }))
 import template from './../template'
 
 app.use('/user', require('./routes/userRoutes'))
-app.use('/bookmark', require('./routes/bookmarkRoutes'))
+app.use('/bookmarks', require('./routes/bookmarkRoutes'))
 
 app.get('*', (req, res) => {
   res.status(200).send(template())

@@ -1,18 +1,33 @@
-header {
+.header {
   align-items: center;
   background-color: $semi-dark-blue;
   border: none;
   border-radius: 2rem;
   display: grid;
-  grid-template-rows: 9.8rem 20rem 1fr 7.2rem;
+  grid-template-rows: 9.8rem 20rem 1fr 15rem;
   height: 90vh;
   justify-items: center;
   margin: $space-large $space-small $space-large $space-large;
 
-  & img {
+  &__user {
+    align-items: center;
     border: 1px solid $pure-white;
     border-radius: 20rem;
+    display: flex;
+    flex-direction: column;
     grid-row: 4 /5;
+    height: 4.2rem;
+    width: 4.2rem;
+
+    &__tag {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  & img {
+    height: 4rem;
     width: 4rem;
   }
 }
@@ -42,7 +57,7 @@ nav {
 }
 
 @media (max-width: $tablet-break) {
-  header {
+  .header {
     align-items: center;
     display: grid;
     grid-template-columns: 8rem 1fr 8rem;
@@ -52,8 +67,19 @@ nav {
     margin: $space-medium $space-medium $space-large $space-medium;
     padding: 0;
 
-    & img {
+    &__user {
+      flex-direction: row-reverse;
       grid-row: auto;
+      height: 3.4rem;
+      width: 3.4rem;
+
+      &__tag {
+        margin-right: $space-small;
+      }
+    }
+
+    & img {
+      height: 3.2rem;
       width: 3.2rem;
     }
   }
@@ -70,12 +96,17 @@ nav {
 }
 
 @media (max-width: $mobile-break) {
-  header {
+  .header {
     border-radius: 0;
     grid-template-columns: 4.3rem 1fr 4.3rem;
     height: 5.6rem;
-
     margin: 0 0 $space-medium 0;
+
+    &__user {
+      &__tag {
+        margin-right: $space-xxsmall;
+      }
+    }
 
     & svg {
       transform: scale(0.76);

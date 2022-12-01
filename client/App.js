@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { hot } from 'react-hot-loader/root'
+
+import { validate } from './features/auth/authSlice'
+import { getBookmarks, bookmarkReset } from './features/bookmark/bookmarkSlice'
 
 import Layout from './components/Layout'
 import Home from './components/Home'
@@ -12,6 +16,19 @@ import Signup from './components/Signup'
 import PageNotFound from './components/PageNotFound'
 
 const App = () => {
+  const dispatch = useDispatch()
+
+  const { user, isAuthenticated } = useSelector((state) => state.auth)
+
+  useEffect(() => {
+    dispatch(validate(user))
+    if (isAuthenticated) {
+      dispatch(getBookmarks())
+    } else {
+      dispatch(bookmarkReset())
+    }
+  }, [user, isAuthenticated])
+
   return (
     <>
       <BrowserRouter>

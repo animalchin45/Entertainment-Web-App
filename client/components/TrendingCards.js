@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import BookmarkEmpty from '../assets/icon-bookmark-empty.svg'
 import BookmarkFull from '../assets/icon-bookmark-full.svg'
@@ -9,6 +9,7 @@ import Play from '../assets/icon-play.svg'
 import { images } from '../hooks/imageImport'
 
 function TrendingCards() {
+  const { user } = useSelector((state) => state.auth)
   const { data } = useSelector((state) => state.data)
   const trending = data.filter((show) => show.isTrending === true)
 
@@ -18,9 +19,11 @@ function TrendingCards() {
 
     return (
       <div className='card card--trending' key={title.title}>
-        <button className='btn__bookmark btn__bookmark--trending'>
-          {title.isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
-        </button>
+        {user && (
+          <button className='btn__bookmark btn__bookmark--trending'>
+            {title.isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
+          </button>
+        )}
         <button className='btn btn--play'>
           <div className='btn--play__icon btn--play__icon--trending'>
             <Play />
