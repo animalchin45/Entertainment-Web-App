@@ -67,7 +67,7 @@ export const deleteBookmark = createAsyncThunk(
 )
 
 export const bookmarkSlice = createSlice({
-  name: 'bookmark',
+  name: 'bookmarks',
   initialState,
   reducers: {
     bookmarkReset: (state) => initialState,

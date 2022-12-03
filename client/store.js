@@ -10,7 +10,7 @@ import bookmarkReducer from './features/bookmark/bookmarkSlice'
 const reducers = combineReducers({
   data: dataReducer,
   auth: authReducer,
-  bookmark: bookmarkReducer,
+  bookmarks: bookmarkReducer,
 })
 
 // Configure Store

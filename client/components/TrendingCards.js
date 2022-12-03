@@ -1,27 +1,58 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { images } from '../hooks/imageImport'
+import {
+  createBookmark,
+  deleteBookmark,
+} from '../features/bookmark/bookmarkSlice'
+
 import BookmarkEmpty from '../assets/icon-bookmark-empty.svg'
 import BookmarkFull from '../assets/icon-bookmark-full.svg'
 import Movie from '../assets/icon-category-movie.svg'
 import Tv from '../assets/icon-category-tv.svg'
 import Play from '../assets/icon-play.svg'
-import { images } from '../hooks/imageImport'
 
 function TrendingCards() {
-  const { user } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+
   const { data } = useSelector((state) => state.data)
+  const { user } = useSelector((state) => state.auth)
+  const { bookmarks } = useSelector((state) => state.bookmarks)
   const trending = data.filter((show) => show.isTrending === true)
+
+  // Set array of bookmark titles
+  const bookmarkTitles = bookmarks.map((bookmark) => bookmark.title)
+
+  const onAddBookmark = (showName) => {
+    dispatch(createBookmark({ title: showName }))
+  }
+
+  const onDeleteBookmark = (id) => {
+    dispatch(deleteBookmark(id))
+  }
 
   const renderedCards = trending.map((title) => {
     const imgPath = title.thumbnail.trending.large
     const imgSrc = images[imgPath.replace('./assets/', '')]
+    const id = bookmarks.filter((bookmark) => bookmark.title === title.title)
 
     return (
       <div className='card card--trending' key={title.title}>
-        {user && (
-          <button className='btn__bookmark btn__bookmark--trending'>
-            {title.isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
+        {user && bookmarkTitles.includes(title.title) && (
+          <button
+            className='btn__bookmark btn__bookmark--trending'
+            onClick={() => onDeleteBookmark(id[0]._id)}
+          >
+            <BookmarkFull />
+          </button>
+        )}
+        {user && !bookmarkTitles.includes(title.title) && (
+          <button
+            className='btn__bookmark btn__bookmark--trending'
+            onClick={() => onAddBookmark(title.title)}
+          >
+            <BookmarkEmpty />
           </button>
         )}
         <button className='btn btn--play'>
