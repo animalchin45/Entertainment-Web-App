@@ -56,10 +56,10 @@ function TrendingCards() {
           </button>
         )}
         <button className='btn btn--play'>
-          <div className='btn--play__icon btn--play__icon--trending'>
+          <span className='btn--play__icon btn--play__icon--trending'>
             <Play />
             <h4>Play</h4>
-          </div>
+          </span>
           <div className='card--trending__info'>
             <p>
               {title.year}
@@ -71,7 +71,7 @@ function TrendingCards() {
             </p>
             <h3>{title.title}</h3>
           </div>
-          <img src={imgSrc.default} />
+          <img src={imgSrc.default} alt={title.title} />
         </button>
       </div>
     )

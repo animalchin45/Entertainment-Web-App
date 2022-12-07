@@ -24,7 +24,7 @@ function Search() {
 
   return (
     <form className='search' onSubmit={onSubmit}>
-      <button className='btn__search'>
+      <button className='btn__search' title='Search'>
         <SearchButton />
       </button>
       <input

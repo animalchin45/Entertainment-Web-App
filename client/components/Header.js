@@ -25,23 +25,23 @@ function Header() {
     <header className='header'>
       <Logo />
       <nav>
-        <Link to='/'>
+        <Link to='/' aria-label='Home'>
           <Home />
         </Link>
-        <Link to='/movies'>
+        <Link to='/movies' aria-label='Movies'>
           <Movies />
         </Link>
-        <Link to='/tv'>
+        <Link to='/tv' aria-label='Tv'>
           <Tv />
         </Link>
-        <Link to='/bookmarks'>
+        <Link to='/bookmarks' aria-label='Bookmarks'>
           <Bookmark />
         </Link>
       </nav>
       {user && (
         <div className='header__user'>
-          <button className='btn' onClick={onClick}>
-            <img src={avatar} />
+          <button className='btn' title='User' onClick={onClick}>
+            <img src={avatar} alt='User' />
           </button>
           <div className='header__user__tag'>
             <p>{user.email.split('@')[0]}</p>
@@ -51,8 +51,8 @@ function Header() {
       )}
       {!user && (
         <div className='header__user'>
-          <Link to='/login'>
-            <img src={avatar} />
+          <Link to='/login' aria-label='Login'>
+            <img src={avatar} alt='User' />
           </Link>
           <div className='header__user__tag'>
             <p>Login</p>

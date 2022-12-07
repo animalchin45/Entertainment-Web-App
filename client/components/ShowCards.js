@@ -53,11 +53,11 @@ function ShowCards({ data }) {
           </button>
         )}
         <button className='btn btn--play'>
-          <div className='btn--play__icon btn--play__icon--show'>
+          <span className='btn--play__icon btn--play__icon--show'>
             <Play />
             <h4>Play</h4>
-          </div>
-          <img src={imgSrc.default} />
+          </span>
+          <img src={imgSrc.default} alt={title.title} />
         </button>
         <div className='card--show__info'>
           <p className='font-small'>
