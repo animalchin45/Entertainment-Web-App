@@ -60,7 +60,7 @@ const config = {
       'process.env': JSON.stringify(process.env),
     }),
     new HtmlWebpackPlugin({
-      favicon: './client/img/favicon.png',
+      favicon: './client/assets/favicon-32x32.png',
     }),
   ],
 }
