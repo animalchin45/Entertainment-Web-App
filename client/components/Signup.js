@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
-import { authReset, register } from '../features/auth/authSlice'
+import { authReset, signUp } from '../features/auth/authSlice'
 import { getBookmarks } from '../features/bookmark/bookmarkSlice'
 
 import Logo from '../assets/logo.svg'
@@ -10,6 +11,11 @@ import Logo from '../assets/logo.svg'
 function Signup() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
 
   const { user, isError, isSuccess, message } = useSelector(
     (state) => state.auth
@@ -23,13 +29,9 @@ function Signup() {
 
   const { email, password, password2 } = formData
 
-  useEffect(async () => {
-    // if (isError) {
-    //   toast.error(message)
-    // }
-
+  useEffect(() => {
     if (isSuccess && user) {
-      await dispatch(getBookmarks())
+      dispatch(getBookmarks())
       navigate('/')
     }
 
@@ -39,15 +41,13 @@ function Signup() {
   }, [user, isSuccess, isError, message, navigate, dispatch])
 
   const onChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
-    }))
+    })
   }
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-
+  const onSubmit = () => {
     if (password !== password2) {
       console.log('Passwords do not match!')
     } else {
@@ -56,7 +56,7 @@ function Signup() {
         password,
       }
 
-      dispatch(register(userData))
+      dispatch(signUp(userData))
     }
   }
 
@@ -66,34 +66,51 @@ function Signup() {
         <Logo />
         <div className='account__form'>
           <h1>Sign Up</h1>
-          <form onSubmit={onSubmit}>
-            <input
-              className='input input__account'
-              placeholder='Email address'
-              type='email'
-              id='email'
-              name='email'
-              value={email}
-              onChange={onChange}
-            />
-            <input
-              className='input input__account'
-              placeholder='Password'
-              type='password'
-              id='password'
-              name='password'
-              value={password}
-              onChange={onChange}
-            />
-            <input
-              className='input input__account'
-              placeholder='Repeat Password'
-              type='password'
-              id='password2'
-              name='password2'
-              value={password2}
-              onChange={onChange}
-            />
+          <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <input
+                className='input input__account'
+                placeholder='Email address'
+                type='email'
+                {...register('email', {
+                  required: true,
+                  pattern:
+                    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                })}
+                value={email}
+                onChange={onChange}
+              />
+              <label className='input__account__error-label'>
+                {errors.email && <p>Please enter a valid email</p>}
+              </label>
+            </div>
+            <div>
+              <input
+                className='input input__account'
+                placeholder='Password'
+                type='password'
+                {...register('password', { required: true })}
+                value={password}
+                onChange={onChange}
+              />
+              <label className='input__account__error-label'>
+                {errors.password && <p>Can't be empty</p>}
+              </label>
+            </div>
+            <div>
+              <input
+                className='input input__account'
+                placeholder='Repeat Password'
+                type='password'
+                {...register('password2', { required: true })}
+                value={password2}
+                onChange={onChange}
+              />
+              <label className='input__account__error-label'>
+                {errors.password2 && <p>Can't be empty</p>}
+              </label>
+            </div>
+
             <button className='btn btn__account' type='submit'>
               Create an account
             </button>

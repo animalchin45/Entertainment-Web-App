@@ -43,6 +43,14 @@
     display: flex;
     flex-direction: column;
 
+    & div {
+      margin-bottom: $space-medium;
+
+      &:last-of-type {
+        margin-bottom: 4rem;
+      }
+    }
+
     & > * {
       width: 100%;
     }
@@ -64,7 +72,6 @@
 
     &__wrapper {
       transform: translateX(-$space-xsmall);
-      // width: 100%;
     }
   }
 }

@@ -71,8 +71,18 @@ h4 {
   }
 }
 
+.account {
+  &__error-label {
+    color: $red;
+  }
+}
+
 .input {
   color: $pure-white;
+
+  &__account__error-label {
+    color: $red;
+  }
 }
 
 .btn {

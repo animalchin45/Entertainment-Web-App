@@ -32,12 +32,12 @@ export const validate = createAsyncThunk(
   }
 )
 
-// Resister User
-export const register = createAsyncThunk(
-  'auth/register',
+// Sign Up User
+export const signUp = createAsyncThunk(
+  'auth/signUp',
   async (user, thunkAPI) => {
     try {
-      return await authService.register(user)
+      return await authService.signUp(user)
     } catch (error) {
       const message =
         (error.response &&
@@ -80,17 +80,17 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
+      .addCase(signUp.pending, (state) => {
         state.isLoading = true
       })
-      .addCase(register.fulfilled, (state, action) => {
+      .addCase(signUp.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
         state.user = action.payload
         state.token = action.payload.token
         state.isAuthenticated = true
       })
-      .addCase(register.rejected, (state, action) => {
+      .addCase(signUp.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
