@@ -58,7 +58,7 @@ Users should be able to:
 
 ### What I learned
 
-This is challenge that will put your full stack skills to the test. I made a couple small changes to the design to more completly accomadate an auth flow. The avatar need some kind of user feedback to show that someone is logged in. I setup the bookmarks so that they are only available when a user is present and they are persistant with the user that is logged in. I've made a similar project outside of this challenge using a third party API for images and text. This was a learning experience as this challenge simply has a JSON file and local assets. I had to change my method for importing a large number of images dynamically.
+This is challenge that will put your full stack skills to the test. I made a couple small changes to the design to more completely accommodate an auth flow. The avatar need some kind of user feedback to show that someone is logged in. I setup the bookmarks so that they are only available when a user is present and they are persistent with the user that is logged in. I've made a similar project outside of this challenge using a third party API for images and text. This was a learning experience as this challenge simply has a JSON file and local assets. I had to change my method for importing a large number of images dynamically.
 
 This is the custom hook for importing all images
 
