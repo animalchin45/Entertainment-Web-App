@@ -20,6 +20,18 @@ const config = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
     ],
   },
 }

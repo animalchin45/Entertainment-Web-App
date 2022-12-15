@@ -60,7 +60,7 @@ function TrendingCards() {
             <Play />
             <h4>Play</h4>
           </span>
-          <div className='card--trending__info'>
+          <span className='card--trending__info'>
             <p>
               {title.year}
               <span className='card__dot'></span>
@@ -70,7 +70,7 @@ function TrendingCards() {
               {title.rating}
             </p>
             <h3>{title.title}</h3>
-          </div>
+          </span>
           <img src={imgSrc.default} alt={title.title} />
         </button>
       </div>

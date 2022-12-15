@@ -1,7 +1,6 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const dotenv = require('dotenv')
 const CURRENT_WORKING_DIR = process.cwd()
@@ -58,9 +57,6 @@ const config = {
     }),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
-    }),
-    new HtmlWebpackPlugin({
-      favicon: './client/assets/favicon-32x32.png',
     }),
   ],
 }
